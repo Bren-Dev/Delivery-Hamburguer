@@ -1,3 +1,11 @@
+Obs: Na quinta feira eu ia consumir o endpoint, porém, apareceu o seguinte erro: Offline for maintenance
+This app is undergoing maintenance right now.
+
+Please check back later.
+
+Logo, não consegui consumir a API 
+
+
 ## Preview do Site Desktop
 
 

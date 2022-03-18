@@ -20,7 +20,6 @@ import ellipse from "../../assets/Ellipse.svg";
 
 const Header: React.FC = () => {
   const [MenuClick, setClick] = useState(false);
-  const [shoppingCart, setShoppingCart] = useState(0);
   return (
     <>
       <Container>
@@ -56,7 +55,7 @@ const Header: React.FC = () => {
           <div>
             <img src={cart} alt="www.google.com" />
             <img id="ellipse" src={ellipse} alt="www.google.com" />
-            <span>{shoppingCart}</span>
+            <span>0</span>
             <p>Carrinho</p>
           </div>
         </SectionUser>

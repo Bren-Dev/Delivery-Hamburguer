@@ -32,9 +32,12 @@ export const Main = () => {
   const [molhoCheddar, setMolhoCheddar] = useState(0);
   const [picanha, setPicanha] = useState(0);
   const [showPopover, setShowPopover] = useState(false);
+  const [shoppingCart, setShoppingCart] = useState(0);
+
 
   function EventShow() {
     setShowPopover(true);
+    setShoppingCart(shoppingCart + 1)
   }
 
   return (

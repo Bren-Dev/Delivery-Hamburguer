@@ -15,10 +15,12 @@ import arrow from "../../assets/arrow_down.svg";
 import cart from "../../assets/shopping_cart.svg";
 import account from "../../assets/account.svg";
 import DeliveryDrawer from "../delivery-drawer";
+import ellipse from "../../assets/Ellipse.svg";
 
 
 const Header: React.FC = () => {
   const [MenuClick, setClick] = useState(false);
+  const [shoppingCart, setShoppingCart] = useState(0);
   return (
     <>
       <Container>
@@ -53,6 +55,8 @@ const Header: React.FC = () => {
           </div>
           <div>
             <img src={cart} alt="www.google.com" />
+            <img id="ellipse" src={ellipse} alt="www.google.com" />
+            <span>{shoppingCart}</span>
             <p>Carrinho</p>
           </div>
         </SectionUser>

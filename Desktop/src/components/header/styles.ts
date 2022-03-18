@@ -133,4 +133,19 @@ export const SectionUser = styled.div`
    display:none ;
    visibility:hidden ;
   }
+  #ellipse{
+    width: 16px;
+height: 16px;
+position:absolute ;
+top:23px;
+right: 149px;
+color:white;
+  }
+  span{
+position:absolute ;
+top:23px;
+right: 161px;
+font-size: 10px;
+color:white;
+  }
 `;

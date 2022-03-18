@@ -1,5 +1,6 @@
-import React, { useState} from "react";
+import React, { useEffect, useState } from "react";
 import { RiSubtractLine } from "react-icons/ri";
+import axios from "axios";
 
 import {
   Container,
@@ -24,20 +25,31 @@ import hamburguer from "../../assets/hamburguer.svg";
 import plus from "../../assets/Plus.svg";
 import Polygon from "../../assets/polygon.svg";
 
+const URI =
+  "https://6077803e1ed0ae0017d6aea4.mockapi.io/test-frontend/products";
 
 export const Main = () => {
-  const [state, setState] = useState(0);
+  const [state, setState] = useState(1);
   const [queijoCheddar, setQueijoCheddar] = useState(0);
   const [crispy, setCrispy] = useState(0);
   const [molhoCheddar, setMolhoCheddar] = useState(0);
   const [picanha, setPicanha] = useState(0);
   const [showPopover, setShowPopover] = useState(false);
   const [shoppingCart, setShoppingCart] = useState(0);
+  const [price] = useState(31.99);
+  const [discount] = useState(34.95);
+  useEffect(getTodos, []);
 
+  function getTodos() {
+    axios
+      .get(`${URI}`)
+      .then((res) => res.data)
+      .catch(window.alert);
+  }
 
   function EventShow() {
     setShowPopover(true);
-    setShoppingCart(shoppingCart + 1)
+    setShoppingCart(shoppingCart + 1);
   }
 
   return (
@@ -54,8 +66,8 @@ export const Main = () => {
               </p>
 
               <DivPrice>
-                <span className="Price">R$31,99</span>
-                <span className="Discount">R$34,95</span>
+                <span className="Price">R${(price + (queijoCheddar*4.99) + (crispy*1.50) + (molhoCheddar*3.50)+(picanha*3.50))*state}</span>
+                <span className="Discount">R${(discount + (queijoCheddar*4.99) + (crispy*1.50) + (molhoCheddar*3.50)+(picanha*3.50))*state}</span>
               </DivPrice>
             </div>
           </DivOffer>
@@ -186,7 +198,6 @@ export const Main = () => {
               <button onClick={EventShow} className="buttonAdd">
                 Adicionar
               </button>
-            
             </SectionFinish>
             {showPopover && (
               <ContainerPopover>
@@ -202,6 +213,10 @@ export const Main = () => {
                     <h1>Ingredientes:</h1>
                     <div className="FinalOrder">
                       <ul>
+                        <li>1 Carne 250gr</li>
+                        <li>2 Queijo Cheddar</li>
+                        <li>1 Bacon</li>
+                        <li>Molho Especial</li>
                         <li>{queijoCheddar} Queijo Cheddar</li>
                         <li>{crispy} Cebola crispy</li>
                         <li>{molhoCheddar} Molho cheddar</li>

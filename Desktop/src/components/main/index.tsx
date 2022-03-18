@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, {useState } from "react";
 import { RiSubtractLine } from "react-icons/ri";
-import axios from "axios";
 
 import {
   Container,
@@ -25,8 +24,6 @@ import hamburguer from "../../assets/hamburguer.svg";
 import plus from "../../assets/Plus.svg";
 import Polygon from "../../assets/polygon.svg";
 
-const URI =
-  "https://6077803e1ed0ae0017d6aea4.mockapi.io/test-frontend/products";
 
 export const Main = () => {
   const [state, setState] = useState(1);
@@ -38,14 +35,7 @@ export const Main = () => {
   const [shoppingCart, setShoppingCart] = useState(0);
   const [price] = useState(31.99);
   const [discount] = useState(34.95);
-  useEffect(getTodos, []);
 
-  function getTodos() {
-    axios
-      .get(`${URI}`)
-      .then((res) => res.data)
-      .catch(window.alert);
-  }
 
   function EventShow() {
     setShowPopover(true);

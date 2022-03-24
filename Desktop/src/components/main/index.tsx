@@ -56,8 +56,8 @@ export const Main = () => {
               </p>
 
               <DivPrice>
-                <span className="Price">R${(price + (queijoCheddar*4.99) + (crispy*1.50) + (molhoCheddar*3.50)+(picanha*3.50))*state}</span>
-                <span className="Discount">R${(discount + (queijoCheddar*4.99) + (crispy*1.50) + (molhoCheddar*3.50)+(picanha*3.50))*state}</span>
+                <span className="Price">R${((price + (queijoCheddar*4.99) + (crispy*1.50) + (molhoCheddar*3.50)+(picanha*3.50))*state).toFixed(2)}</span>
+                <span className="Discount">R${((discount + (queijoCheddar*4.99) + (crispy*1.50) + (molhoCheddar*3.50)+(picanha*3.50))*state).toFixed(2)}</span>
               </DivPrice>
             </div>
           </DivOffer>
